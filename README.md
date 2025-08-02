@@ -4,12 +4,14 @@ An AI agent that "browses" the web via tools to answer queries instantly, powere
 
 ## 🚀 Features
 
-- **🧠 Agentic AI**: AI autonomously selects and uses tools based on query analysis
+- **🧠 ReAct Reasoning**: AI follows Reason→Act→Observe pattern for transparent decision-making
+- **🔍 Agentic AI**: AI autonomously selects and uses tools based on intelligent query analysis
 - **⚡ Instant Responses**: Powered by Cerebras' Llama3.1-8B model at lightning speed
 - **🔧 Smart Tool Selection**: AI chooses between web search, URL scraping, or combined approaches
 - **🌐 Web Search**: Free web search using DuckDuckGo (no API keys required)
 - **📄 Web Scraping**: Robust BeautifulSoup-powered content extraction with error handling
 - **🎯 Context-Aware**: Combines multiple information sources with AI reasoning
+- **👁️ Transparent Process**: Watch AI reasoning unfold step-by-step
 - **💻 CLI Interface**: Easy-to-use command-line interface with real-time progress
 
 ## 📦 Setup
@@ -45,7 +47,12 @@ python test_setup.py
 python main.py
 ```
 
-### Demo Mode (Recommended for first-time users)
+### ReAct Demo Mode (Recommended - Shows AI Reasoning)
+```bash
+python demo_react_complete.py
+```
+
+### Agentic Demo Mode
 ```bash
 python demo_agentic.py
 ```
@@ -53,6 +60,7 @@ python demo_agentic.py
 ### Test the Enhanced System
 ```bash
 python test_agentic_tools.py
+python test_react_agent.py
 ```
 
 ### Example Queries
@@ -113,9 +121,13 @@ AIWebWarden/
 ├── cerebras_client.py      # Cerebras API client
 ├── tools.py               # Agentic web tools
 ├── main.py                # Main assistant with agentic logic
+├── agent.py               # LangChain ReAct agent
+├── react_agent_simple.py # Simplified ReAct agent (recommended)
 ├── test_setup.py          # Basic setup verification
 ├── test_agentic_tools.py  # Enhanced agentic system tests
+├── test_react_agent.py    # ReAct agent testing
 ├── demo_agentic.py        # Interactive demo showcase
+├── demo_react_complete.py # Complete ReAct reasoning demo
 └── README.md              # This file
 ```
 

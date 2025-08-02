@@ -3,5 +3,6 @@ requests
 beautifulsoup4
 langchain
 langchain-community
+langchain-core
 python-dotenv
 duckduckgo-search 
