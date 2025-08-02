@@ -4,11 +4,13 @@ An AI agent that "browses" the web via tools to answer queries instantly, powere
 
 ## 🚀 Features
 
-- **Instant AI Responses**: Powered by Cerebras' Llama3.1-8B model at lightning speed
-- **Web Search**: Free web search using DuckDuckGo (no API keys required)
-- **Web Scraping**: BeautifulSoup-powered content extraction
-- **Smart Context**: Combines search results with AI reasoning
-- **CLI Interface**: Easy-to-use command-line interface
+- **🧠 Agentic AI**: AI autonomously selects and uses tools based on query analysis
+- **⚡ Instant Responses**: Powered by Cerebras' Llama3.1-8B model at lightning speed
+- **🔧 Smart Tool Selection**: AI chooses between web search, URL scraping, or combined approaches
+- **🌐 Web Search**: Free web search using DuckDuckGo (no API keys required)
+- **📄 Web Scraping**: Robust BeautifulSoup-powered content extraction with error handling
+- **🎯 Context-Aware**: Combines multiple information sources with AI reasoning
+- **💻 CLI Interface**: Easy-to-use command-line interface with real-time progress
 
 ## 📦 Setup
 
@@ -43,10 +45,23 @@ python test_setup.py
 python main.py
 ```
 
-Then ask questions like:
-- "Find the best laptop under $1000"
-- "What are the latest AI developments?"
-- "Compare Python vs JavaScript for web development"
+### Demo Mode (Recommended for first-time users)
+```bash
+python demo_agentic.py
+```
+
+### Test the Enhanced System
+```bash
+python test_agentic_tools.py
+```
+
+### Example Queries
+The AI will automatically select the best tools for each query:
+- **Research**: "Find the best laptop under $1000"
+- **News**: "What are the latest AI developments?"
+- **Comparison**: "Compare Python vs JavaScript for web development"
+- **Direct URL**: "Scrape information from https://example.com"
+- **Current Events**: "What is the current Bitcoin price?"
 
 ### Programmatic Usage
 ```python
@@ -65,31 +80,43 @@ response = get_completion("Hello, world!")
 print(response)
 ```
 
-## 🏗️ Architecture
+## 🏗️ Agentic Architecture
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   User Query    │ -> │  Web Search      │ -> │  AI Processing  │
-│                 │    │  (DuckDuckGo)    │    │  (Cerebras)     │
+│   User Query    │ -> │  AI Tool Selector│ -> │   Tool Router   │
+│                 │    │   (Cerebras)     │    │                 │
 └─────────────────┘    └──────────────────┘    └─────────────────┘
                                 ↓                        ↓
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│ Final Response  │ <- │  Context Prep    │ <- │  Search Results │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
+│ Final Response  │ <- │  AI Synthesizer  │ <- │ Tool Execution  │
+│   (Cerebras)    │    │   (Cerebras)     │    │ • web_search    │
+└─────────────────┘    └──────────────────┘    │ • scrape_url    │
+                                                │ • search_scrape │
+                                                └─────────────────┘
 ```
+
+### Agentic Flow:
+1. **Query Analysis**: AI analyzes user intent
+2. **Tool Selection**: AI chooses optimal tool(s) 
+3. **Tool Execution**: Selected tools gather information
+4. **Response Synthesis**: AI creates comprehensive answer
 
 ## 📁 Project Structure
 
 ```
 AIWebWarden/
-├── venv/                 # Virtual environment
-├── .env                  # API keys (not in git)
-├── .gitignore           # Git ignore file
-├── requirements.txt     # Dependencies
-├── cerebras_client.py   # Cerebras API client
-├── main.py             # Main assistant logic
-├── test_setup.py       # Setup verification
-└── README.md           # This file
+├── venv/                    # Virtual environment
+├── .env                     # API keys (not in git)
+├── .gitignore              # Git ignore file
+├── requirements.txt        # Dependencies
+├── cerebras_client.py      # Cerebras API client
+├── tools.py               # Agentic web tools
+├── main.py                # Main assistant with agentic logic
+├── test_setup.py          # Basic setup verification
+├── test_agentic_tools.py  # Enhanced agentic system tests
+├── demo_agentic.py        # Interactive demo showcase
+└── README.md              # This file
 ```
 
 ## 🔧 Configuration
