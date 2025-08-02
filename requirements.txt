@@ -1,0 +1,7 @@
+cerebras-cloud-sdk
+requests
+beautifulsoup4
+langchain
+langchain-community
+python-dotenv
+duckduckgo-search 
