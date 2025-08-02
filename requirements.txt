@@ -5,4 +5,5 @@ langchain
 langchain-community
 langchain-core
 python-dotenv
-duckduckgo-search 
+duckduckgo-search
+streamlit 

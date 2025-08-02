@@ -42,17 +42,28 @@ python test_setup.py
 
 ## 🎯 Usage
 
-### Interactive Mode
+### 🌐 Web Interface (Recommended for Demos)
 ```bash
-python main.py
+streamlit run streamlit_app.py
+# Then open: http://localhost:8501
 ```
 
-### ReAct Demo Mode (Recommended - Shows AI Reasoning)
+### 🚀 Simple CLI Interface
+```bash
+python main_simple.py
+```
+
+### 🎮 Advanced CLI Interface  
+```bash
+python main_interface.py
+```
+
+### 🧠 ReAct Demo Mode (Shows AI Reasoning)
 ```bash
 python demo_react_complete.py
 ```
 
-### Agentic Demo Mode
+### 🔧 Agentic Demo Mode
 ```bash
 python demo_agentic.py
 ```
@@ -123,9 +134,13 @@ AIWebWarden/
 ├── main.py                # Main assistant with agentic logic
 ├── agent.py               # LangChain ReAct agent
 ├── react_agent_simple.py # Simplified ReAct agent (recommended)
+├── main_simple.py         # Simple CLI interface
+├── main_interface.py      # Advanced CLI interface  
+├── streamlit_app.py       # Web UI interface (recommended)
 ├── test_setup.py          # Basic setup verification
 ├── test_agentic_tools.py  # Enhanced agentic system tests
 ├── test_react_agent.py    # ReAct agent testing
+├── test_interfaces.py     # Interface testing suite
 ├── demo_agentic.py        # Interactive demo showcase
 ├── demo_react_complete.py # Complete ReAct reasoning demo
 └── README.md              # This file
